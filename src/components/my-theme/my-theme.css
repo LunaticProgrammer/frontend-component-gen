@@ -1,0 +1,75 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: rgb(171, 240, 132);
+}
+.bug-type{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  justify-content: space-between;
+}
+.bug-type button{
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
+.inputbug{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  
+}
+.inputbug textarea{
+  background-color: rgb(158, 158, 245);
+  border-color: blueviolet;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+
+}
+.inputbug input
+{
+  background-color: rgb(245, 139, 139);
+  width: 50%;
+  height: 30px;
+  box-sizing: border-box;
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+  
+  
+}
+.submission{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  
+  width: 40%;
+}
+.submission button
+{
+  background-color: #48a1ca; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  border-radius: 10px;
+  
+}
+.submission input{
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+}
+button{
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+}
