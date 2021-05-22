@@ -23,10 +23,12 @@
   },
   "dependencies": {
     "@stencil/core": "^2.0.1",
-    "darkmode-js": "^1.5.7"
+    "darkmode-js": "^1.5.7",
+    "request": "^2.88.2"
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/jquery": "^3.5.5",
     "autoprefixer": "^10.2.5",
     "postcss": "^8.2.15",
     "tailwindcss": "^2.1.2"

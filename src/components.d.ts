@@ -6,7 +6,21 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BotTag {
+        "_id": any;
+    }
+    interface FeedbackTag {
+        "_id": any;
+    }
+    interface MainTag {
+        "_hs1": any;
+        "_hs2": boolean;
+        "_id": any;
+        "hs3": boolean;
+        "hs4": boolean;
+    }
     interface MyComponent {
+        "_id": any;
         /**
           * The first name
          */
@@ -22,9 +36,28 @@ export namespace Components {
         "middle": string;
     }
     interface MyTheme {
+        "_id": any;
     }
 }
 declare global {
+    interface HTMLBotTagElement extends Components.BotTag, HTMLStencilElement {
+    }
+    var HTMLBotTagElement: {
+        prototype: HTMLBotTagElement;
+        new (): HTMLBotTagElement;
+    };
+    interface HTMLFeedbackTagElement extends Components.FeedbackTag, HTMLStencilElement {
+    }
+    var HTMLFeedbackTagElement: {
+        prototype: HTMLFeedbackTagElement;
+        new (): HTMLFeedbackTagElement;
+    };
+    interface HTMLMainTagElement extends Components.MainTag, HTMLStencilElement {
+    }
+    var HTMLMainTagElement: {
+        prototype: HTMLMainTagElement;
+        new (): HTMLMainTagElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -38,12 +71,29 @@ declare global {
         new (): HTMLMyThemeElement;
     };
     interface HTMLElementTagNameMap {
+        "bot-tag": HTMLBotTagElement;
+        "feedback-tag": HTMLFeedbackTagElement;
+        "main-tag": HTMLMainTagElement;
         "my-component": HTMLMyComponentElement;
         "my-theme": HTMLMyThemeElement;
     }
 }
 declare namespace LocalJSX {
+    interface BotTag {
+        "_id"?: any;
+    }
+    interface FeedbackTag {
+        "_id"?: any;
+    }
+    interface MainTag {
+        "_hs1"?: any;
+        "_hs2"?: boolean;
+        "_id"?: any;
+        "hs3"?: boolean;
+        "hs4"?: boolean;
+    }
     interface MyComponent {
+        "_id"?: any;
         /**
           * The first name
          */
@@ -59,8 +109,12 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface MyTheme {
+        "_id"?: any;
     }
     interface IntrinsicElements {
+        "bot-tag": BotTag;
+        "feedback-tag": FeedbackTag;
+        "main-tag": MainTag;
         "my-component": MyComponent;
         "my-theme": MyTheme;
     }
@@ -69,6 +123,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "bot-tag": LocalJSX.BotTag & JSXBase.HTMLAttributes<HTMLBotTagElement>;
+            "feedback-tag": LocalJSX.FeedbackTag & JSXBase.HTMLAttributes<HTMLFeedbackTagElement>;
+            "main-tag": LocalJSX.MainTag & JSXBase.HTMLAttributes<HTMLMainTagElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-theme": LocalJSX.MyTheme & JSXBase.HTMLAttributes<HTMLMyThemeElement>;
         }

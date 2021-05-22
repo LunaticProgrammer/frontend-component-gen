@@ -28,7 +28,21 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: rgb(37, 36, 39);
+  color: white;
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
   
+}
+.fontchange{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(199, 140, 201);
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
 }
 
 .fontsize

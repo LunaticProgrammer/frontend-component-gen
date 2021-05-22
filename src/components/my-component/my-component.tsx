@@ -1,12 +1,12 @@
-import { Component, Prop, h,ComponentWillLoad,  } from '@stencil/core';
-import { format } from '../../utils/utils';
+import { Component, Prop, h,  } from '@stencil/core';
+
 import Darkmode from 'darkmode-js';
 
 
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
-  shadow: true,
+  shadow: false,
 })
 export class MyComponent {
   componentWillLoad(){
@@ -21,6 +21,7 @@ export class MyComponent {
     });
     console.log(window.performance);
   }
+  @Prop() _id;
   
   /**
    * The first name
@@ -31,16 +32,14 @@ export class MyComponent {
    * The middle name
    */
   @Prop() middle: string;
-
+  
   /**
    * The last name
    */
   @Prop() last: string;
 
 
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
-  }
+  
   switcher(){
     
     const darkmode =  new Darkmode();
@@ -52,13 +51,13 @@ export class MyComponent {
       darkmode.toggle();
     }    
   }
-  viewhide(){
-    document.getElementsByClassName('radiobtn')[0].getRootNode().firstChild;
-  }
+ 
   increaseFontSize(){
+    
     var style=window.getComputedStyle(document.body,null).getPropertyValue('font-size');
     var currentsize=parseFloat(style);
     document.body.style.fontSize=(currentsize+1)+'px';
+    console.log(style);
   }
   decreaseFontSize(){
     var style=window.getComputedStyle(document.body,null).getPropertyValue('font-size');
@@ -75,17 +74,16 @@ export class MyComponent {
 //onClick={()=>this.switcher()}
   render() {
     return (
-    
     <div class="access">
-      <button class="button" onClick={()=>this.viewhide()} >Konnex {this.getText()}</button>
-      <div class="radiobtn" id="modal">
-      <input type='radio' name='a' onChange={this.switcher} />Dark
-      <input type='radio' name='a' onChange={this.switcher} /> Light
+      
+      <div class="radiobtn">
+      
+      <button onClick={()=>this.switcher()} class="fontsize" >Switch Theme</button>
       </div>
+      <div class="fontchange">
       <button onClick={()=>this.increaseFontSize()} class="fontsize">+</button>
       <button onClick={()=>this.decreaseFontSize()} class="fontsize"> -</button>
-    
-    </div>);
-   
+      </div>
+    </div>);   
   }
 }
