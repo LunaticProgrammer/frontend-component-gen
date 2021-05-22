@@ -7,12 +7,17 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface BotTag {
+        "_id": any;
     }
     interface FeedbackTag {
         "_id": any;
     }
     interface MainTag {
+        "_hs1": any;
+        "_hs2": boolean;
         "_id": any;
+        "hs3": boolean;
+        "hs4": boolean;
     }
     interface MyComponent {
         "_id": any;
@@ -75,12 +80,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface BotTag {
+        "_id"?: any;
     }
     interface FeedbackTag {
         "_id"?: any;
     }
     interface MainTag {
+        "_hs1"?: any;
+        "_hs2"?: boolean;
         "_id"?: any;
+        "hs3"?: boolean;
+        "hs4"?: boolean;
     }
     interface MyComponent {
         "_id"?: any;

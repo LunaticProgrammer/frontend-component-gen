@@ -21,21 +21,18 @@ export class MyTheme {
   
   async submit (event){
     event.preventDefault();
-    var t1=this.categ;
-    var t2=this.bugTitle.value;
-    var t3=this.bugDesc.value;
-    var t4=this.bugEmail.value;
-  //  const data = {
-  //     "category": this.categ,
-  //     "description": this.bugDesc.value,
-  //     "heading": this.bugTitle.value,
-  //     "raisedEmail": this.bugEmail.value,
-  // };
+    console.log(this.bugEmail.value);
+   const data = {
+      "category": this.categ,
+      "description": this.bugDesc.value,
+      "heading": this.bugTitle.value,
+      "raisedEmail": this.bugEmail.value,
+  };
     
-    console.log(this.bugTitle.value);
-    await fetch("http://4e54551b65e5.ngrok.io/bug/create", {
+    //console.log(this.bugTitle.value);
+    await fetch("http://84d0783fcbec.ngrok.io/bug/create", {
     method: 'POST',
-    body: JSON.stringify({}),
+    body: JSON.stringify(data),
     headers: {
         'Content-Type': 'application/json',
         'id':this._id
@@ -58,7 +55,7 @@ export class MyTheme {
       <input type="text" placeholder="Decribe the Bug"  ref={(el) => this.bugDesc = el as HTMLInputElement}/>
       </div>
       <div class="submission">
-        <input type="email" placeholder="Enter your email to get notified" id="bug_email" ref={(el) => this.bugDesc = el as HTMLInputElement}/>
+        <input type="email" placeholder="Enter your email to get notified" id="bug_email" ref={(el) => this.bugEmail = el as HTMLInputElement}/>
         <button onClick={(event)=>(this.submit(event))}>Submit</button>
       </div>
 
